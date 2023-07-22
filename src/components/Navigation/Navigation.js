@@ -1,11 +1,9 @@
-import { Layout, Menu, Button, Input, Badge, Dropdown, Avatar } from "antd";
+import { Layout, Menu, Button } from "antd";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UserOutlined,
-  BellOutlined,
   SettingOutlined,
-  SearchOutlined,
   EditOutlined,
   LogoutOutlined,
   QuestionCircleOutlined,
@@ -14,6 +12,11 @@ import "./Navigation.css";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { updateLoginInfo } from "../../store/user";
+import Logo from "./Logo";
+import SearchBar from "./SearchBar";
+import Notifications from "./Notifications";
+import SettingsMenu from "./SettingsMenu";
+import UserMenu from "./UserMenu";
 
 const { Header } = Layout;
 
@@ -25,7 +28,7 @@ const Navigation = ({ collapsed, toggleCollapsed }) => {
     localStorage.removeItem("isUserLoggedIn");
     navigate("/");
   };
-  
+
   const menu = (
     <Menu>
       <Menu.Item key="1" disabled>
@@ -54,11 +57,7 @@ const Navigation = ({ collapsed, toggleCollapsed }) => {
   return (
     <Layout className="nav">
       <Header className="navigation-header">
-        <img
-          src={collapsed ? "./images/logo-sm.png" : "./images/logo.png"}
-          alt="Emilus"
-          className={collapsed ? "collapsed e-ico" : "not-collapsed"}
-        />
+        <Logo collapsed={collapsed} />
         <Button
           type="text"
           className="menu-button"
@@ -73,27 +72,11 @@ const Navigation = ({ collapsed, toggleCollapsed }) => {
           }
           onClick={toggleCollapsed}
         />
-        <Input
-          prefix={<SearchOutlined className="search-icon" />}
-          placeholder="Search"
-          className="search"
-        />
+        <SearchBar />
         <div className="nav-tabs-container">
-          <Dropdown disabled menu={menu}>
-            <Badge count={5} offset={[-20, 0]}>
-              <BellOutlined className="nav-bell" />
-            </Badge>
-          </Dropdown>
-          <Dropdown disabled>
-            <SettingOutlined />
-          </Dropdown>
-          <Dropdown overlay={menu} trigger={["click"]}>
-            <Avatar
-              size={32}
-              icon={<UserOutlined />}
-              style={{ cursor: "pointer" }}
-            />
-          </Dropdown>
+          <Notifications menu={menu} />
+          <SettingsMenu />
+          <UserMenu menu={menu} />
         </div>
       </Header>
     </Layout>
