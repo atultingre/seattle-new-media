@@ -1,7 +1,7 @@
 import { Layout, Menu } from "antd";
 import { UserOutlined, HomeOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-// import Pages from "../Pages/Pages";
+import Pages from "../Pages/Pages";
 
 const Sider = ({ collapsed }) => {
   const { Sider } = Layout;
@@ -24,16 +24,15 @@ const Sider = ({ collapsed }) => {
               <Link to="/dashboard">Dashboard</Link>
             </Menu.Item>
             <Menu.Item key="2" icon={<HomeOutlined />}>
-              <Link to="/home">Homepage</Link>
+              <Link to="#">Homepage</Link>
             </Menu.Item>
             <Menu.Item key="3" icon={<UserOutlined />}>
-              <Link to="/dummy">Dummy Page</Link>
+              <Link to="#">Dummy Page</Link>
             </Menu.Item>
           </Menu>
         </Sider>
-        <Layout>
-          {/* <Pages /> */}
-        </Layout>
+          <Pages />
+          
       </Layout>
     </>
   );
