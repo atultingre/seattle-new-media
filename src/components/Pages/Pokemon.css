@@ -1,0 +1,16 @@
+/* Pokemon.css */
+.pokemon-layout {
+    width: 100%;
+  }
+  
+  .pokemon-table-container {
+    flex-grow: 1;
+    width: 100%;
+  }
+  
+  .spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
