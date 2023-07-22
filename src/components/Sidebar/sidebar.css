@@ -5,13 +5,25 @@
     top: 4rem;
     bottom: 0;
     width: 200px;
-    /* margin-top: 4rem; */
 }
 
 .mobile-menu {
     display: none;
 }
 
+.collapsed{
+    margin: 0;
+}
+
+.sidebar-mobile{
+    margin-left: -195px;
+    width: 7rem;
+}
+
+.sidebar-mobile-menu{
+width: 290px;
+margin-top: 16px;
+}
 
 @media screen and (max-width: 768px) {
     .sider {
