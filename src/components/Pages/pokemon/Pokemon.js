@@ -15,7 +15,7 @@ const Pokemon = () => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
-  const itemsPerPage = 40;
+  const itemsPerPage = 20;
 
   const fetchPokemonData = async (page) => {
     try {
