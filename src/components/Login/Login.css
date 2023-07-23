@@ -7,12 +7,10 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* Ensure the container takes the full height of the viewport */
 }
 
 .login-form {
     max-width: 600px;
-    /* Adjust the maximum width as needed for your design */
     background: #fff;
     padding: 2rem;
     border-radius: 8px;
