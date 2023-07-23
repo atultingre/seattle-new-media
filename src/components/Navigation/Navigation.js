@@ -5,7 +5,7 @@ import {
   UserOutlined,
   SettingOutlined,
   EditOutlined,
-  LogoutOutlined,
+  LogoutOutlined,GlobalOutlined,
   QuestionCircleOutlined,
 } from "@ant-design/icons";
 import "./Navigation.css";
