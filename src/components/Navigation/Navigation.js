@@ -39,8 +39,6 @@ const Navigation = ({ collapsed, toggleCollapsed }) => {
         <UserOutlined className="menu-item-icon" />
         Account Setting
       </Menu.Item>
- <Menu.Item key="3" disabled>
-        <GlobalOutlined  className="menu-item-icon" />
       <Menu.Item key="4" disabled>
         <SettingOutlined className="menu-item-icon" />
         Account Billing
@@ -77,6 +75,7 @@ const Navigation = ({ collapsed, toggleCollapsed }) => {
         <SearchBar />
         <div className="nav-tabs-container">
           <Notifications menu={menu} />
+<GlobalOutlined />
           <SettingsMenu />
           <UserMenu menu={menu} />
         </div>
