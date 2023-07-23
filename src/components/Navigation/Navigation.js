@@ -39,15 +39,17 @@ const Navigation = ({ collapsed, toggleCollapsed }) => {
         <UserOutlined className="menu-item-icon" />
         Account Setting
       </Menu.Item>
-      <Menu.Item key="3" disabled>
+ <Menu.Item key="3" disabled>
+        <GlobalOutlined  className="menu-item-icon" />
+      <Menu.Item key="4" disabled>
         <SettingOutlined className="menu-item-icon" />
         Account Billing
       </Menu.Item>
-      <Menu.Item key="4" disabled>
+      <Menu.Item key="5" disabled>
         <QuestionCircleOutlined className="menu-item-icon" />
         Help Center
       </Menu.Item>
-      <Menu.Item key="5" onClick={handleLogout}>
+      <Menu.Item key="6" onClick={handleLogout}>
         <LogoutOutlined className="menu-item-icon" />
         Signout
       </Menu.Item>
