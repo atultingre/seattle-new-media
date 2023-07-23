@@ -11,18 +11,18 @@
     display: none;
 }
 
-.collapsed{
+.collapsed {
     margin: 0;
 }
 
-.sidebar-mobile{
+.sidebar-mobile {
     margin-left: -195px;
     width: 7rem;
 }
 
-.sidebar-mobile-menu{
-width: 290px;
-margin-top: 16px;
+.sidebar-mobile-menu {
+    width: 290px;
+    margin-top: 16px;
 }
 
 @media screen and (max-width: 768px) {
@@ -38,5 +38,9 @@ margin-top: 16px;
 
     .ant-drawer-content-wrapper {
         display: none;
+    }
+
+    .sidebar-menu {
+        margin-top: 0rem;
     }
 }

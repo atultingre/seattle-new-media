@@ -56,7 +56,6 @@
     margin-right: 5px;
 }
 
-/* Mobile */
 @media screen and (max-width: 768px) {
     .emilus-text {
         display: none;

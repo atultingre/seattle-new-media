@@ -1,8 +1,16 @@
 import React from "react";
-import { Table, Typography, } from "antd";
+import { Table, Typography } from "antd";
 import { EyeOutlined } from "@ant-design/icons";
 
-const PokemonTable = ({ pokemonList, loading, currentPage, itemsPerPage, totalResults, onTableChange, onViewDetails }) => {
+const PokemonTable = ({
+  pokemonList,
+  loading,
+  currentPage,
+  itemsPerPage,
+  totalResults,
+  onTableChange,
+  onViewDetails,
+}) => {
   const columns = [
     {
       title: "Sr No",
@@ -36,7 +44,10 @@ const PokemonTable = ({ pokemonList, loading, currentPage, itemsPerPage, totalRe
     onChange: onTableChange,
   };
 
+
   return (
+    <div className="pokemon-table-container">
+
     <Table
       size="large"
       columns={columns}
@@ -47,6 +58,7 @@ const PokemonTable = ({ pokemonList, loading, currentPage, itemsPerPage, totalRe
       pagination={paginationConfig}
       loading={loading}
     />
+    </div>
   );
 };
 

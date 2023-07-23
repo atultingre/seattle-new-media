@@ -14,7 +14,6 @@ const Login = () => {
   const [form] = Form.useForm();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const [loading, setLoading] = useState(false);
 
   const handleLogin = (values) => {
     if (values.username === "admin" && values.password === "password") {
