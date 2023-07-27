@@ -10,6 +10,7 @@ const PokemonTable = ({
   totalResults,
   onTableChange,
   onViewDetails,
+  pageSizeOptions,
 }) => {
   const columns = [
     {
