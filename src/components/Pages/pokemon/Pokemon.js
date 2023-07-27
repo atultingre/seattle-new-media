@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useCallback } from "react";
 import { Layout } from "antd";
 import axios from "axios";
 import "./Pokemon.css";
@@ -19,7 +19,24 @@ const Pokemon = () => {
   const pageSizeOptions =[10,20,50,100]
  
 
-  const fetchPokemonData = async (page) => {
+  // const fetchPokemonData = async (page) => {
+  //   try {
+  //     setLoading(true);
+  //     const response = await axios.get(
+  //       `https://pokeapi.co/api/v2/pokemon/?limit=${itemsPerPage}&offset=${
+  //         (page - 1) * itemsPerPage
+  //       }`
+  //     );
+  //     setPokemonList(response.data.results);
+  //     setTotalResults(response.data.count);
+  //     setLoading(false);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //     setLoading(false);
+  //   }
+  // };
+
+  const fetchPokemonData = useCallback(async (page) => {
     try {
       setLoading(true);
       const response = await axios.get(
@@ -34,7 +51,10 @@ const Pokemon = () => {
       console.error("Error fetching data:", error);
       setLoading(false);
     }
-  };
+  }, [itemsPerPage]);  // dependency array
+  useEffect(() => {
+    fetchPokemonData(currentPage);
+  }, [currentPage, itemsPerPage, fetchPokemonData]);
 
   const fetchPokemonDetails = async (url) => {
     try {
@@ -58,11 +78,11 @@ const Pokemon = () => {
     }
   }, [modalData]);
 
-  const handleTableChange = (page,pageSize) => {
-    setCurrentPage(1);
-    setItemPerPage(pageSize)
-    console.log(page,"PageSize:",pageSize)
-  };
+  // const handleTableChange = (page,pageSize) => {
+  //   setCurrentPage(1);
+  //   setItemPerPage(pageSize)
+  //   console.log(page,"PageSize:",pageSize)
+  // };
 
   const handleViewDetails = (record) => {
     setModalData(record);
