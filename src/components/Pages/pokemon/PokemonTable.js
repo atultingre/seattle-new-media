@@ -38,8 +38,7 @@ const PokemonTable = ({
   ];
 
   const paginationConfig = {
-    current: currentPage,
-    pageSize: itemsPerPage,
+    pageSize: pageSizeOptions,
     total: totalResults,
     onChange: onTableChange,
   };

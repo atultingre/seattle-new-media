@@ -15,7 +15,7 @@ const Pokemon = () => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
-  const itemsPerPage = 20;
+  const [itemsPerPage, setItemPerPage] = useState(10)
  
 
   const fetchPokemonData = async (page) => {
@@ -58,8 +58,8 @@ const Pokemon = () => {
   }, [modalData]);
 
   const handleTableChange = (page,pageSize) => {
-    setCurrentPage(page);
-    setTotalResults(pageSize)
+    setCurrentPage(1);
+    setItemPerPage(pageSize)
     console.log(page,"PageSize:",pageSize)
   };
 
