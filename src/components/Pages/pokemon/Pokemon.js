@@ -52,6 +52,7 @@ const Pokemon = () => {
       setLoading(false);
     }
   }, [itemsPerPage]);  // dependency array
+
   useEffect(() => {
     fetchPokemonData(currentPage);
   }, [currentPage, itemsPerPage, fetchPokemonData]);
@@ -68,9 +69,9 @@ const Pokemon = () => {
     }
   };
 
-  useEffect(() => {
-    fetchPokemonData(currentPage);
-  }, [currentPage,fetchPokemonData]);
+  // useEffect(() => {
+  //   fetchPokemonData(currentPage);
+  // }, [currentPage,fetchPokemonData]);
 
   useEffect(() => {
     if (modalData.url) {
@@ -78,11 +79,11 @@ const Pokemon = () => {
     }
   }, [modalData]);
 
-  // const handleTableChange = (page,pageSize) => {
-  //   setCurrentPage(1);
-  //   setItemPerPage(pageSize)
-  //   console.log(page,"PageSize:",pageSize)
-  // };
+  const handleTableChange = (page,pageSize) => {
+    setCurrentPage(1);
+    setItemPerPage(pageSize)
+    console.log(page,"PageSize:",pageSize)
+  };
 
   const handleViewDetails = (record) => {
     setModalData(record);
