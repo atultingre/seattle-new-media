@@ -16,6 +16,7 @@ const Pokemon = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
   const itemsPerPage = 20;
+ 
 
   const fetchPokemonData = async (page) => {
     try {
@@ -56,8 +57,9 @@ const Pokemon = () => {
     }
   }, [modalData]);
 
-  const handleTableChange = (page) => {
+  const handleTableChange = (page,pageSize) => {
     setCurrentPage(page);
+    console.log(page,"PageSize:",pageSize)
   };
 
   const handleViewDetails = (record) => {
