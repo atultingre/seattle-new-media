@@ -59,6 +59,7 @@ const Pokemon = () => {
 
   const handleTableChange = (page,pageSize) => {
     setCurrentPage(page);
+    setTotalResults(pageSize)
     console.log(page,"PageSize:",pageSize)
   };
 
