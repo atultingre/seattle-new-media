@@ -50,7 +50,7 @@ const Pokemon = () => {
 
   useEffect(() => {
     fetchPokemonData(currentPage);
-  }, [currentPage]);
+  }, [currentPage,itemsPerPage]);
 
   useEffect(() => {
     if (modalData.url) {
